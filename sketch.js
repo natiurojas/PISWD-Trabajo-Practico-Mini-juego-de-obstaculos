@@ -61,16 +61,16 @@ function draw() {
 
 function crearObstaculo() {
   let tipo = floor(random(3));
-  let x = random(30, width - 30);
+  let x = random(40, width - 40);
   let vel = random(velocidadBase, velocidadBase + 2);
 
   let obs;
   if (tipo === 0) {
     obs = {
       x: x,
-      y: -40,
-      ancho: 40,
-      alto: 40,
+      y: -55,
+      ancho: 55,
+      alto: 55,
       velocidad: vel,
       tipo: "imagen",
       imagen: random(imagenesObstaculos),
@@ -84,9 +84,9 @@ function crearObstaculo() {
   } else if (tipo === 1) {
     obs = {
       x: x,
-      y: -30,
-      ancho: random(30, 60),
-      alto: random(20, 40),
+      y: -55,
+      ancho: random(45, 85),
+      alto: random(30, 55),
       velocidad: vel,
       tipo: "rectangulo",
       dibujar: function () {
@@ -102,9 +102,9 @@ function crearObstaculo() {
   } else {
     obs = {
       x: x,
-      y: -35,
-      ancho: 35,
-      alto: 35,
+      y: -50,
+      ancho: 50,
+      alto: 50,
       velocidad: vel,
       tipo: "cuadrado",
       dibujar: function () {
@@ -176,9 +176,9 @@ function mostrarGameOver() {
 function reiniciarJuego() {
   jugador = {
     x: width / 2,
-    y: height - 50,
-    ancho: 50,
-    alto: 50,
+    y: height - 70,
+    ancho: 70,
+    alto: 70,
     velocidad: 5
   };
   obstaculos = [];
