@@ -1,15 +1,15 @@
 let jugador;
-let obstaculos = [];
+let obstaculos= [];
 let puntaje = 0;
-let estadoJuego = "jugando";
-let velocidadBase = 3;
+let estadoJuego= "jugando";
+let velocidadBase= 3;
 let tempoAumento;
 let imagenPersonaje;
 let imagenesObstaculos = [];
 let imagenFondo;
 
 function preload() {
-  imagenPersonaje = loadImage("Personaje00.png");
+  imagenPersonaje=loadImage("Personaje00.png");
   imagenesObstaculos.push(loadImage("Obstaculo.png"));
   imagenesObstaculos.push(loadImage("Obstaculo00.png"));
   imagenesObstaculos.push(loadImage("Obstaculo01.png"));
