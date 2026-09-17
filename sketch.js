@@ -6,12 +6,14 @@ let velocidadBase = 3;
 let tempoAumento;
 let imagenPersonaje;
 let imagenesObstaculos = [];
+let imagenFondo;
 
 function preload() {
   imagenPersonaje = loadImage("Personaje00.png");
   imagenesObstaculos.push(loadImage("Obstaculo.png"));
   imagenesObstaculos.push(loadImage("Obstaculo00.png"));
   imagenesObstaculos.push(loadImage("Obstaculo01.png"));
+  imagenFondo = loadImage("Fondo.jpg");
 }
 
 function setup() {
@@ -21,7 +23,7 @@ function setup() {
 }
 
 function draw() {
-  background(30, 30, 50);
+  image(imagenFondo, 0, 0, width, height);
 
   if (estadoJuego === "jugando") {
     dibujarJugador();
