@@ -8,6 +8,8 @@ let imagenPersonaje;
 let imagenesObstaculos = [];
 let imagenFondo;
 
+// preload carga los obstaculos antes que empiece el juego 
+// para que no se vea el obstaculo cuando se crea
 function preload() {
   imagenPersonaje=loadImage("Personaje00.png");
   // push manda a un arreglo la imagen del obstaculo para que se pueda usar en el juego
