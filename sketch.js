@@ -143,11 +143,12 @@ function moverJugador() {
 }
 // Detecta la distancia entre el obstaculo del jugador
 function detectarColision(j, o) {
-  // Verifica si las posiciones y tamaños de los objetos se superponen
-  return o.posX < j.posX + j.sizeX &&
-        o.posX + o.sizeX > j.posX &&
-        o.posY < j.posY + j.sizeY &&
-        o.posY + o.sizeY > j.posY;
+  let dx = abs(j.x - o.x);
+  let dy = abs(j.y - o.y);
+  // Distancia lateral y vertical para detectar colision
+  let overlapX = (j.ancho / 2 + o.ancho / 2) * 0.7;
+  let overlapY = (j.alto / 2 + o.alto / 2) * 0.7;
+  return dx < overlapX && dy < overlapY;
 }
 
 function mostrarPuntaje() {
@@ -159,7 +160,6 @@ function mostrarPuntaje() {
 
 function mostrarGameOver() {
   fill(0, 0, 0, 160);
-  // funciona para que los obstaculos no tengan bordes
   noStroke();
   rectMode(CENTER);
   rect(width / 2, height / 2, 360, 200, 15);
