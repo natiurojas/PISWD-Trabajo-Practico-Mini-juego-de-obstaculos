@@ -159,6 +159,7 @@ function mostrarPuntaje() {
 
 function mostrarGameOver() {
   fill(0, 0, 0, 160);
+  // funciona para que los obstaculos no tengan bordes
   noStroke();
   rectMode(CENTER);
   rect(width / 2, height / 2, 360, 200, 15);
