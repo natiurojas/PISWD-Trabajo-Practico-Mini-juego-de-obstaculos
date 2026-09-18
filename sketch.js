@@ -46,7 +46,7 @@ function draw() {
         puntaje++;
       }
     }
-
+//Saca el resto del framecount y si es 300 aumenta la velocidad base de los obstaculos
     if (frameCount % 300 === 0) {
       velocidadBase += 0.5;
     }
@@ -139,10 +139,11 @@ function moverJugador() {
   }
   jugador.x = constrain(jugador.x, jugador.ancho / 2, width - jugador.ancho / 2);
 }
-
+// Detecta la distancia entre el obstaculo del jugador
 function detectarColision(j, o) {
   let dx = abs(j.x - o.x);
   let dy = abs(j.y - o.y);
+  // Distancia lateral y vertical para detectar colision
   let overlapX = (j.ancho / 2 + o.ancho / 2) * 0.7;
   let overlapY = (j.alto / 2 + o.alto / 2) * 0.7;
   return dx < overlapX && dy < overlapY;
