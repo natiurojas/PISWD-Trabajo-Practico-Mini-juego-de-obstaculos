@@ -10,6 +10,7 @@ let imagenFondo;
 
 function preload() {
   imagenPersonaje=loadImage("Personaje00.png");
+  // push manda a un arreglo la imagen del obstaculo para que se pueda usar en el juego
   imagenesObstaculos.push(loadImage("Obstaculo.png"));
   imagenesObstaculos.push(loadImage("Obstaculo00.png"));
   imagenesObstaculos.push(loadImage("Obstaculo01.png"));
@@ -142,12 +143,11 @@ function moverJugador() {
 }
 // Detecta la distancia entre el obstaculo del jugador
 function detectarColision(j, o) {
-  let dx = abs(j.x - o.x);
-  let dy = abs(j.y - o.y);
-  // Distancia lateral y vertical para detectar colision
-  let overlapX = (j.ancho / 2 + o.ancho / 2) * 0.7;
-  let overlapY = (j.alto / 2 + o.alto / 2) * 0.7;
-  return dx < overlapX && dy < overlapY;
+  // Verifica si las posiciones y tamaños de los objetos se superponen
+  return o.posX < j.posX + j.sizeX &&
+        o.posX + o.sizeX > j.posX &&
+        o.posY < j.posY + j.sizeY &&
+        o.posY + o.sizeY > j.posY;
 }
 
 function mostrarPuntaje() {
