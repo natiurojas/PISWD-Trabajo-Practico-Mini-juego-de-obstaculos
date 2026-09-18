@@ -42,6 +42,7 @@ function draw() {
       }
 
       if (obstaculos[i].y > height + 50) {
+        // splice funciona para eliminar el obstaculo del arreglo y aumentar el puntaje
         obstaculos.splice(i, 1);
         puntaje++;
       }
